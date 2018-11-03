@@ -1,0 +1,31 @@
+{
+  "name": "jinya/profiling-bundle",
+  "type": "library",
+  "description": "Dumps the symfony profiler data into yaml files to be usable outside of the symfony web profiler",
+  "authors": [
+    {
+      "name": "Imanuel Ulbricht",
+      "email": "imanuel.ulbricht@jinya.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Jinya\\ProfilingBundle\\": "src/"
+    }
+  },
+  "require": {
+    "ext-iconv": "*",
+    "symfony/http-kernel": "^4.0",
+    "symfony/var-dumper": "^4.0",
+    "symfony/polyfill-iconv": "^1.10",
+    "symfony/config": "^4.0",
+    "twig/twig": "^2.5",
+    "symfony/twig-bridge": "^4.0",
+    "symfony/dependency-injection": "^4.0",
+    "symfony/yaml": "^4.0",
+    "doctrine/dbal": "^2.8",
+    "doctrine/common": "^2.9",
+    "doctrine/orm": "^2.6",
+    "symfony/doctrine-bridge": "^4.0"
+  }
+}

@@ -131,3 +131,10 @@ fabric.properties
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/jetbrains
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+###< symfony/framework-bundle ###
+.idea/
