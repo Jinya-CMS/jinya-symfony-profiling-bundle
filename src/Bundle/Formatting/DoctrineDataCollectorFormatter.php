@@ -6,7 +6,7 @@
  * Time: 00:41
  */
 
-namespace Jinya\ProfilingBundle\Profiling\Formatting;
+namespace Jinya\Profiling\Bundle\Formatting;
 
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriver;
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain;

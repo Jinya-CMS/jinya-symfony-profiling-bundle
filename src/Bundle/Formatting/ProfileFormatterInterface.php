@@ -6,7 +6,7 @@
  * Time: 00:19
  */
 
-namespace Jinya\ProfilingBundle\Profiling\Formatting;
+namespace Jinya\Profiling\Bundle\Formatting;
 
 use Symfony\Component\HttpKernel\Profiler\Profile;
 

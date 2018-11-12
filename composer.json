@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Jinya\\ProfilingBundle\\": "src/"
+      "Jinya\\Profiling\\": "src/"
     }
   },
   "require": {

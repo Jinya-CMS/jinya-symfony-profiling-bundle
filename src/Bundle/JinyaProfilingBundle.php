@@ -6,7 +6,7 @@
  * Time: 02:22
  */
 
-namespace Jinya\ProfilingBundle;
+namespace Jinya\Profiling\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -6,7 +6,7 @@
  * Time: 00:15
  */
 
-namespace Jinya\ProfilingBundle\Profiling\Formatting;
+namespace Jinya\Profiling\Bundle\Formatting;
 
 use Symfony\Bridge\Doctrine\DataCollector\DoctrineDataCollector;
 
