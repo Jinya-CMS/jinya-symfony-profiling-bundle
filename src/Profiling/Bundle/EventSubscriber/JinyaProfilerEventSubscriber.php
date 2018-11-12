@@ -41,13 +41,13 @@ class JinyaProfilerEventSubscriber implements EventSubscriberInterface
      * @param string $profilerOutDir
      * @param ProfileFormatterInterface $profileFormatter
      */
-    public function __construct(Profiler $profiler, string $profilerOutDir, ProfileFormatterInterface $profileFormatter)
+    public function __construct(Profiler $profiler, string $profilerOutDir, bool $profilerEnabled, ProfileFormatterInterface $profileFormatter)
     {
         $this->profiler = $profiler;
         $this->profilerOutDir = $profilerOutDir;
         $this->fs = new Filesystem();
         $this->profileFormatter = $profileFormatter;
-        $this->profilerEnabled = 'yes' === getenv('APP_PROFILING');
+        $this->profilerEnabled = $profilerEnabled;
     }
 
     /**
