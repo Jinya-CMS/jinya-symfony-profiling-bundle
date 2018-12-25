@@ -6,9 +6,9 @@
  * Time: 01:50
  */
 
-namespace Jinya\Profiling\Bundle\EventSubscriber\Profiling;
+namespace JinyaProfiling\Bundle\EventSubscriber\Profiling;
 
-use Jinya\Profiling\Bundle\Formatting\ProfileFormatterInterface;
+use JinyaProfiling\Bundle\Formatting\ProfileFormatterInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;

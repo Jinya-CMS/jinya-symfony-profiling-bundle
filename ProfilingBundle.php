@@ -6,10 +6,10 @@
  * Time: 02:22
  */
 
-namespace Jinya\Profiling\Bundle;
+namespace JinyaProfiling\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class JinyaProfilingBundle extends Bundle
+class ProfilingBundle extends Bundle
 {
 }

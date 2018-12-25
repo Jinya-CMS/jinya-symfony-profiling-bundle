@@ -6,7 +6,7 @@
  * Time: 00:25
  */
 
-namespace Jinya\Profiling\Bundle\Formatting;
+namespace JinyaProfiling\Bundle\Formatting;
 
 use Symfony\Component\VarDumper\Cloner\Data;
 

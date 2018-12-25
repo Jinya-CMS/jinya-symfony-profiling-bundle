@@ -6,9 +6,8 @@
  * Time: 02:43
  */
 
-namespace Jinya\Profiling\Bundle\DependencyInjection;
+namespace JinyaProfiling\Bundle\DependencyInjection;
 
-use Jinya\Profiling\Bundle\EventSubscriber\Profiling\JinyaProfilerEventSubscriber;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -33,7 +32,7 @@ class JinyaProfilingExtension extends Extension
 
         $config = $this->processConfiguration($configuration, $configs);
 
-        $definition = $container->getDefinition(JinyaProfilerEventSubscriber::class);
+        $definition = $container->getDefinition('jinya_profiling.profiler.event_subscriber');
         $definition->setArgument('profilerOutDir', $config['profiler']['out_dir']);
         $definition->setArgument('profilerEnabled', $config['profiler']['enabled']);
     }

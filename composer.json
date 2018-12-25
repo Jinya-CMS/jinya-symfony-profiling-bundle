@@ -1,6 +1,6 @@
 {
   "name": "jinya/profiling-bundle",
-  "type": "library",
+  "type": "symfony-bundle",
   "description": "Dumps the symfony profiler data into yaml files to be usable outside of the symfony web profiler",
   "authors": [
     {
@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Jinya\\": "src/"
+      "JinyaProfiling\\Bundle\\": ""
     }
   },
   "require": {

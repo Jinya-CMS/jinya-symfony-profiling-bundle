@@ -6,7 +6,7 @@
  * Time: 21:29
  */
 
-namespace Jinya\Profiling\Bundle\DependencyInjection;
+namespace JinyaProfiling\Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

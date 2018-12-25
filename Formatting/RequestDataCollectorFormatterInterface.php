@@ -6,7 +6,7 @@
  * Time: 23:22
  */
 
-namespace Jinya\Profiling\Bundle\Formatting;
+namespace JinyaProfiling\Bundle\Formatting;
 
 use Symfony\Component\HttpKernel\DataCollector\RequestDataCollector;
 

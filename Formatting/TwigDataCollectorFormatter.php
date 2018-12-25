@@ -6,7 +6,7 @@
  * Time: 00:23
  */
 
-namespace Jinya\Profiling\Bundle\Formatting;
+namespace JinyaProfiling\Bundle\Formatting;
 
 use Symfony\Bridge\Twig\DataCollector\TwigDataCollector;
 use Twig\Profiler\Profile;
