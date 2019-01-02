@@ -8,6 +8,7 @@
 
 namespace JinyaProfiling\Bundle\DependencyInjection;
 
+use JinyaProfiling\Bundle\EventSubscriber\JinyaProfilerEventSubscriber;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -28,8 +29,8 @@ class JinyaProfilingExtension extends ConfigurableExtension
         $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
         $loader->load('services.yml');
 
-        $definition = $container->getDefinition('jinya_profiling.event_subscriber');
-        $definition->setArgument('profilerOutDir', $configs['out_dir']);
-        $definition->setArgument('profilerEnabled', $configs['enabled']);
+        $definition = $container->getDefinition(JinyaProfilerEventSubscriber::class);
+        $definition->replaceArgument('$profilerOutDir', $configs['out_dir']);
+        $definition->replaceArgument('$profilerEnabled', $configs['enabled']);
     }
 }

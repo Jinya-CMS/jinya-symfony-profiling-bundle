@@ -7,4 +7,31 @@ services:
     # The best practice is to be explicit about your dependencies anyway.
 
   jinya_profiling.event_subscriber:
-    class: JinyaProfiling\Bundle\EventSubscriber\JinyaProfilerEventSubscriber
+    alias: JinyaProfiling\Bundle\EventSubscriber\JinyaProfilerEventSubscriber
+
+  JinyaProfiling\Bundle\Formatting\DataFormatter:
+    autowire: true
+  JinyaProfiling\Bundle\Formatting\DataFormatterInterface: '@JinyaProfiling\Bundle\Formatting\DataFormatter'
+
+  JinyaProfiling\Bundle\Formatting\DoctrineDataCollectorFormatter:
+    autowire: true
+  JinyaProfiling\Bundle\Formatting\DoctrineDataCollectorFormatterInterface: '@JinyaProfiling\Bundle\Formatting\DoctrineDataCollectorFormatter'
+
+  JinyaProfiling\Bundle\Formatting\ProfileFormatter:
+    autowire: true
+  JinyaProfiling\Bundle\Formatting\ProfileFormatterInterface: '@JinyaProfiling\Bundle\Formatting\ProfileFormatter'
+
+  JinyaProfiling\Bundle\Formatting\RequestDataCollectorFormatter:
+    autowire: true
+  JinyaProfiling\Bundle\Formatting\RequestDataCollectorFormatterInterface: '@JinyaProfiling\Bundle\Formatting\RequestDataCollectorFormatter'
+
+  JinyaProfiling\Bundle\Formatting\TwigDataCollectorFormatter:
+    autowire: true
+  JinyaProfiling\Bundle\Formatting\TwigDataCollectorFormatterInterface: '@JinyaProfiling\Bundle\Formatting\TwigDataCollectorFormatter'
+
+  JinyaProfiling\Bundle\EventSubscriber\JinyaProfilerEventSubscriber:
+    arguments:
+      $profiler: '@Symfony\Component\HttpKernel\Profiler\Profiler'
+      $profilerOutDir: ''
+      $profilerEnabled: true
+      $profileFormatter: '@JinyaProfiling\Bundle\Formatting\ProfileFormatter'
