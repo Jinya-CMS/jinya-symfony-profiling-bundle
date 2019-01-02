@@ -6,7 +6,7 @@
  * Time: 01:50
  */
 
-namespace JinyaProfiling\Bundle\EventSubscriber\Profiling;
+namespace JinyaProfiling\Bundle\EventSubscriber;
 
 use JinyaProfiling\Bundle\Formatting\ProfileFormatterInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

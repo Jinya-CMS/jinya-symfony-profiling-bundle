@@ -7,4 +7,4 @@ services:
     # The best practice is to be explicit about your dependencies anyway.
 
   jinya_profiling.event_subscriber:
-    class: JinyaProfiling\Bundle\EventSubscriber\Profiling\JinyaProfilerEventSubscriber
+    class: JinyaProfiling\Bundle\EventSubscriber\JinyaProfilerEventSubscriber
