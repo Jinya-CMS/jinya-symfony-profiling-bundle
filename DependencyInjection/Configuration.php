@@ -22,22 +22,12 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('jinya');
+        $root = $treeBuilder->root('profiling_bundle');
 
         // @formatter:off
         $root->children()
-            ->arrayNode('profiler')
-                ->children()
-                    ->scalarNode('out_dir')
-                        ->defaultValue('%kernel.project_dir%/var/profiler')
-                        ->info('Folder where the profiler output is stored')
-                    ->end()
-                    ->booleanNode('enabled')
-                        ->defaultValue(getenv('APP_DEBUG' === 'yes'))
-                        ->info('Enables the profiling')
-                    ->end()
-                ->end()
-            ->end()
+            ->scalarNode('out_dir')->defaultValue('%kernel.project_dir%/var/profiler')->info('Folder where the profiler output is stored')->end()
+            ->booleanNode('enabled')->defaultValue(getenv('APP_DEBUG' === 'yes'))->info('Enables the profiling')->end()
         ->end();
         // @formatter:on
 

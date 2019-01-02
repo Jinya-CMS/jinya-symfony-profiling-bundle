@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class JinyaProfilingExtension extends Extension
+class ProfilingExtension extends Extension
 {
 
     /**
@@ -25,15 +25,15 @@ class JinyaProfilingExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
-        $loader->load('services.yml');
 
-        $configuration = new Configuration();
+        $configuration = $this->getConfiguration($configs, $container);
 
         $config = $this->processConfiguration($configuration, $configs);
-
         $definition = $container->getDefinition('jinya_profiling.profiler.event_subscriber');
         $definition->setArgument('profilerOutDir', $config['profiler']['out_dir']);
         $definition->setArgument('profilerEnabled', $config['profiler']['enabled']);
+
+        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
+        $loader->load('services.yml');
     }
 }
