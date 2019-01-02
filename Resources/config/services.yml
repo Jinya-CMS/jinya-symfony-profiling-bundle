@@ -6,5 +6,5 @@ services:
     # fetching services directly from the container via $container->get() won't work.
     # The best practice is to be explicit about your dependencies anyway.
 
-  jinya_profiling.profiler.event_subscriber:
+  jinya_profiling.event_subscriber:
     class: JinyaProfiling\Bundle\EventSubscriber\Profiling\JinyaProfilerEventSubscriber

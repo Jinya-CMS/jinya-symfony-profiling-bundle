@@ -10,10 +10,10 @@ namespace JinyaProfiling\Bundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-class ProfilingExtension extends Extension
+class JinyaProfilingExtension extends ConfigurableExtension
 {
 
     /**
@@ -23,17 +23,13 @@ class ProfilingExtension extends Extension
      * @param ContainerBuilder $container
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container)
+    protected function loadInternal(array $configs, ContainerBuilder $container)
     {
-
-        $configuration = $this->getConfiguration($configs, $container);
-
-        $config = $this->processConfiguration($configuration, $configs);
-        $definition = $container->getDefinition('jinya_profiling.profiler.event_subscriber');
-        $definition->setArgument('profilerOutDir', $config['profiler']['out_dir']);
-        $definition->setArgument('profilerEnabled', $config['profiler']['enabled']);
-
         $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
         $loader->load('services.yml');
+
+        $definition = $container->getDefinition('jinya_profiling.event_subscriber');
+        $definition->setArgument('profilerOutDir', $configs['out_dir']);
+        $definition->setArgument('profilerEnabled', $configs['enabled']);
     }
 }

@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('profiling_bundle');
+        $root = $treeBuilder->root('jinya_profiling');
 
         // @formatter:off
         $root->children()

@@ -10,6 +10,6 @@ namespace JinyaProfiling\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ProfilingBundle extends Bundle
+class JinyaProfilingBundle extends Bundle
 {
 }
